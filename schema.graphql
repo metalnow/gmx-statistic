@@ -1,0 +1,234 @@
+type BuyUSDG @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  token: Bytes! # address
+  tokenAmount: BigInt! # uint256
+  usdgAmount: BigInt! # uint256
+  feeBasisPoints: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ClosePosition @entity(immutable: true) {
+  id: Bytes!
+  key: Bytes! # bytes32
+  size: BigInt! # uint256
+  collateral: BigInt! # uint256
+  averagePrice: BigInt! # uint256
+  entryFundingRate: BigInt! # uint256
+  reserveAmount: BigInt! # uint256
+  realisedPnl: BigInt! # int256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CollectMarginFees @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  feeUsd: BigInt! # uint256
+  feeTokens: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CollectSwapFees @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  feeUsd: BigInt! # uint256
+  feeTokens: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DecreaseGuaranteedUsd @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DecreasePoolAmount @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DecreasePosition @entity(immutable: true) {
+  id: Bytes!
+  key: Bytes! # bytes32
+  account: Bytes! # address
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  collateralDelta: BigInt! # uint256
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  price: BigInt! # uint256
+  fee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DecreaseReservedAmount @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DecreaseUsdgAmount @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DirectPoolDeposit @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IncreaseGuaranteedUsd @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IncreasePoolAmount @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IncreasePosition @entity(immutable: true) {
+  id: Bytes!
+  key: Bytes! # bytes32
+  account: Bytes! # address
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  collateralDelta: BigInt! # uint256
+  sizeDelta: BigInt! # uint256
+  isLong: Boolean! # bool
+  price: BigInt! # uint256
+  fee: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IncreaseReservedAmount @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type IncreaseUsdgAmount @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  amount: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type LiquidatePosition @entity(immutable: true) {
+  id: Bytes!
+  key: Bytes! # bytes32
+  account: Bytes! # address
+  collateralToken: Bytes! # address
+  indexToken: Bytes! # address
+  isLong: Boolean! # bool
+  size: BigInt! # uint256
+  collateral: BigInt! # uint256
+  reserveAmount: BigInt! # uint256
+  realisedPnl: BigInt! # int256
+  markPrice: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SellUSDG @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  token: Bytes! # address
+  usdgAmount: BigInt! # uint256
+  tokenAmount: BigInt! # uint256
+  feeBasisPoints: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type Swap @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  tokenIn: Bytes! # address
+  tokenOut: Bytes! # address
+  amountIn: BigInt! # uint256
+  amountOut: BigInt! # uint256
+  amountOutAfterFees: BigInt! # uint256
+  feeBasisPoints: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdateFundingRate @entity(immutable: true) {
+  id: Bytes!
+  token: Bytes! # address
+  fundingRate: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdatePnl @entity(immutable: true) {
+  id: Bytes!
+  key: Bytes! # bytes32
+  hasProfit: Boolean! # bool
+  delta: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UpdatePosition @entity(immutable: true) {
+  id: Bytes!
+  key: Bytes! # bytes32
+  size: BigInt! # uint256
+  collateral: BigInt! # uint256
+  averagePrice: BigInt! # uint256
+  entryFundingRate: BigInt! # uint256
+  reserveAmount: BigInt! # uint256
+  realisedPnl: BigInt! # int256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
